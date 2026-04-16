@@ -21,7 +21,7 @@ export default function Contact() {
                 <Mail className="w-6 h-6 text-soft-blush" />
               </div>
               <div>
-                <p className="font-sans text-sm text-soft-blush/70 mb-1">Email Us</p>
+                <p className="font-sans text-sm text-soft-blush/70 mb-1">Emailllll Us</p>
                 <p className="font-sans font-medium text-lg">helloshashank@ags.com</p>
               </div>
             </div>
