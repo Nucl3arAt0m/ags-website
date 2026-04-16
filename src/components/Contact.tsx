@@ -22,7 +22,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-sans text-sm text-soft-blush/70 mb-1">Email Us</p>
-                <p className="font-sans font-medium text-lg">hello@ags-Shasha.com</p>
+                <p className="font-sans font-medium text-lg">helloshashank@ags.com</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -31,7 +31,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-sans text-sm text-soft-blush/70 mb-1">Call Us</p>
-                <p className="font-sans font-medium text-lg">+91 7273737373</p>
+                <p className="font-sans font-medium text-lg">+91 72083 99033</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -40,7 +40,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="font-sans text-sm text-soft-blush/70 mb-1">Visit Us</p>
-                <p className="font-sans font-medium text-lg">100 Innovation Drive,<br/>Tech City, NY 10001</p>
+                <p className="font-sans font-medium text-lg">Innovation Hub,<br/>Ozar(Mig), Nashik-422206</p>
               </div>
             </div>
           </div>
