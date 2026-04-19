@@ -1,4 +1,5 @@
-﻿import { Shield, TrendingUp, Users, Target } from "lucide-react";
+import { Shield, TrendingUp, Users, Target } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
 
 export default function About() {
   const points = [
@@ -12,7 +13,7 @@ export default function About() {
     <section id="about" className="scroll-mt-20 py-24 bg-pale-rose px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Side: Image Placeholder */}
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square md:aspect-[4/3] lg:aspect-square bg-gradient-to-tr from-primary to-light-accent p-1 transform transition-transform hover:scale-[1.02] duration-500">
+        <ScrollReveal className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square md:aspect-[4/3] lg:aspect-square bg-gradient-to-tr from-primary to-light-accent p-1 transform transition-transform hover:scale-[1.02] duration-500">
           <div className="absolute inset-0 bg-noise opacity-20 mix-blend-overlay"></div>
           {/* Subtle inner highlight */}
           <div className="w-full h-full rounded-[1.4rem] border border-white/20 bg-primary/40 backdrop-blur-sm flex items-center justify-center p-8 text-center relative z-10">
@@ -21,10 +22,10 @@ export default function About() {
                <p className="text-soft-blush font-sans">Crafting digital experiences since 2014</p>
              </div>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Right Side: Text & Features */}
-        <div className="space-y-8">
+        <ScrollReveal stagger className="space-y-8">
           <div>
             <h2 className="font-serif text-5xl font-bold text-primary mb-6">Who We Are</h2>
             <p className="font-sans text-text-gray text-lg leading-relaxed mb-4">
@@ -35,9 +36,9 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 stagger-container">
             {points.map((point, index) => (
-              <div key={index} className="flex gap-4 p-4 rounded-xl hover:bg-white/60 transition-colors duration-300">
+              <div key={index} className="flex gap-4 p-4 rounded-xl hover:bg-white/60 transition-all duration-300 transform hover:scale-105">
                 <div className="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
                   {point.icon}
                 </div>
@@ -50,13 +51,14 @@ export default function About() {
           </div>
           
           <div className="pt-4">
-             <div className="inline-block p-6 bg-white rounded-2xl shadow-md border-l-4 border-primary">
+             <div className="inline-block p-6 bg-white rounded-2xl shadow-md border-l-4 border-primary transform transition-transform hover:scale-105 duration-300">
                 <p className="font-serif text-3xl font-bold text-primary mb-1">2.5M+</p>
                 <p className="font-sans text-text-dark font-semibold uppercase tracking-wide text-xs">Leads Generated</p>
              </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
 }
+

@@ -46,6 +46,8 @@ const services = [
   }
 ];
 
+import ScrollReveal from "./ScrollReveal";
+
 export default function ServicesCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -71,11 +73,11 @@ export default function ServicesCarousel() {
   return (
     <div className="relative max-w-7xl mx-auto px-4 md:px-12">
       <div className="overflow-hidden py-8" ref={emblaRef}>
-        <div className="flex -ml-4">
+        <ScrollReveal stagger className="flex -ml-4">
           {services.map((service, index) => (
             <div key={index} className="flex-none w-full md:w-1/3 pl-4 min-w-0">
-              <div className="h-full bg-white rounded-2xl shadow-md hover:shadow-xl border-t-4 border-primary p-8 transition-all duration-300 transform hover:-translate-y-2 group flex flex-col">
-                <div className="w-16 h-16 bg-pale-rose rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="h-full bg-white rounded-2xl shadow-md hover:shadow-2xl border-t-4 border-primary p-8 transition-all duration-500 transform hover:-translate-y-3 group flex flex-col">
+                <div className="w-16 h-16 bg-pale-rose rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-500">
                   {service.icon}
                 </div>
                 <h3 className="font-serif text-2xl font-bold text-text-dark mb-4">{service.title}</h3>
@@ -84,12 +86,12 @@ export default function ServicesCarousel() {
                 </p>
                 <a href="#contact" className="inline-flex items-center font-bold text-primary hover:text-primary-dark transition-colors mt-auto">
                   Learn More 
-                  <span className="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
+                  <span className="ml-2 transform group-hover:translate-x-2 transition-transform duration-300">→</span>
                 </a>
               </div>
             </div>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
 
       <button onClick={scrollPrev} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-12 h-12 bg-white rounded-full shadow-lg justify-center items-center text-primary hover:bg-primary hover:text-white transition-colors z-10 hidden md:flex" aria-label="Previous slide">

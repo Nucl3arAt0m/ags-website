@@ -40,14 +40,14 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-blue/90 backdrop-blur-md shadow-md py-4"
+          ? "bg-primary shadow-xl py-4"
           : "bg-transparent py-6"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <a 
           href="#top" 
-          className="flex items-center group"
+          className="flex items-center group transition-transform hover:scale-105"
         >
           <img 
             src="/logo.png" 
@@ -63,18 +63,23 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`font-semibold text-sm uppercase tracking-wider transition-colors hover:text-primary ${
-                activeLink === link.id || (!activeLink && link.id === 'home') ? "text-primary" : "text-text-dark"
+              className={`relative font-semibold text-sm uppercase tracking-wider transition-colors duration-300 group ${
+                activeLink === link.id || (!activeLink && link.id === "home") 
+                  ? "text-white" 
+                  : scrolled ? "text-soft-blush/80 hover:text-white" : "text-white hover:text-soft-blush"
               }`}
             >
               {link.name}
+              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full ${
+                activeLink === link.id || (!activeLink && link.id === "home") ? "w-full" : "w-0"
+              }`}></span>
             </a>
           ))}
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-primary p-2"
+          className={`md:hidden p-2 transition-colors ${scrolled ? "text-white" : "text-white"}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -84,14 +89,14 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl flex flex-col py-4 px-6 border-t border-gray-100">
+        <div className="md:hidden absolute top-full left-0 w-full bg-primary-dark shadow-2xl flex flex-col py-4 px-6 border-t border-white/10">
           {links.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`py-4 border-b border-gray-50 text-lg font-semibold hover:text-primary transition-colors ${
-                activeLink === link.id || (!activeLink && link.id === 'home') ? "text-primary" : "text-text-dark"
+              className={`py-4 border-b border-white/5 text-lg font-semibold transition-colors ${
+                activeLink === link.id || (!activeLink && link.id === "home") ? "text-white" : "text-soft-blush/70 hover:text-white"
               }`}
             >
               {link.name}

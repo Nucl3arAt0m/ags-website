@@ -1,4 +1,6 @@
-﻿export default function Hero() {
+import ScrollReveal from "./ScrollReveal";
+
+export default function Hero() {
   return (
     <section id="top" className="relative min-h-screen flex text-center flex-col justify-center items-center bg-gradient-to-b from-primary to-primary-dark overflow-hidden px-6 pt-20">
       {/* Noise Overlay */}
@@ -10,7 +12,7 @@
          <div className="absolute bottom-[10%] right-[10%] w-[30rem] h-[30rem] bg-primary-mid/40 rounded-full blur-[80px] animate-[pulse_6s_easeInOut_infinite] delay-1000"></div>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center mt-12 animate-in fade-in slide-in-from-bottom-10 duration-1000">
+      <ScrollReveal stagger className="relative z-10 max-w-4xl mx-auto flex flex-col items-center mt-12 mb-20">
         <h1 className="font-serif text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
           We Don't Just Manage Social Media. <br className="hidden md:block"/> We Build Brands.
         </h1>
@@ -19,18 +21,18 @@
           We are the marketing partners you've been looking for.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 mb-20">
-          <a href="#contact" className="px-8 py-4 bg-white text-primary font-bold rounded-full hover:bg-pale-rose transition-colors shadow-lg hover:-translate-y-1 transform duration-300">
+        <div className="flex flex-col sm:flex-row gap-4">
+          <a href="#contact" className="px-8 py-4 bg-white text-primary font-bold rounded-full hover:bg-pale-rose shadow-lg hover:-translate-y-1 transform">
             Get Started
           </a>
-          <a href="#services" className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white/10 transition-colors hover:-translate-y-1 transform duration-300">
+          <a href="#services" className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white/10 hover:-translate-y-1 transform">
             Our Services
           </a>
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* Floating Stat Cards */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto pb-16 w-full">
+      <ScrollReveal stagger className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto pb-16 w-full">
         {[
           { label: "Clients Empowered", value: "500+" },
           { label: "Years Experience", value: "10+" },
@@ -38,14 +40,14 @@
         ].map((stat, i) => (
           <div 
             key={i} 
-            className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-center shadow-xl transform transition hover:-translate-y-2 duration-500 animate-in fade-in slide-in-from-bottom-8"
-            style={{ animationDelay: `${(i + 1) * 300}ms`, animationFillMode: 'both' }}
+            className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-center shadow-xl transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
           >
             <h3 className="font-serif text-4xl font-bold text-white mb-2">{stat.value}</h3>
             <p className="font-sans text-soft-blush font-medium uppercase tracking-wider text-sm">{stat.label}</p>
           </div>
         ))}
-      </div>
+      </ScrollReveal>
     </section>
   );
 }
+
